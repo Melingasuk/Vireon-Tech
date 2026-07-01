@@ -1,0 +1,40 @@
+# Configuration for Soil Health & Crop Recommendation Model
+
+# Model hyperparameters
+model:
+  type: "RandomForestClassifier"
+  n_estimators: 100
+  max_depth: 15
+  min_samples_split: 5
+  min_samples_leaf: 2
+  random_state: 42
+
+# Training parameters
+training:
+  test_size: 0.2
+  validation_size: 0.1
+  random_state: 42
+
+# Data paths
+data:
+  raw_path: "data/raw/soil_data.csv"
+  processed_path: "data/processed/soil_data_processed.csv"
+  model_path: "models/crop_recommender.pkl"
+
+# Features
+features:
+  - N          # Nitrogen
+  - P          # Phosphorus
+  - K          # Potassium
+  - pH         # Soil pH
+  - Rainfall   # Annual rainfall
+  - Temperature # Average temperature
+  - Humidity   # Average humidity
+
+# Target variable
+target: "Crop_Type"
+
+# Logging
+logging:
+  level: "INFO"
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
